@@ -10,6 +10,7 @@ function Pokemon(props) {
           <img src={pokemon.img} alt={pokemon.name} />
           <div>
             <h3>{pokemon.name}</h3>
+            <h3>{pokemon.nextEvolution}</h3>
           </div>
         </div>
       ))}
@@ -45,5 +46,17 @@ Pokemon.propTypes = {
         ]
     })
   )
+};
+
+Pokemon.defaultProps = {
+  pokemon: [
+    {
+      id: 16,
+      num: "016",
+      name: "Pidgey",
+      img: "http://www.serebii.net/pokemongo/pokemon/016.png",
+      type: ["Normal", "Flying"]
+    }
+  ]
 };
 export default Pokemon;

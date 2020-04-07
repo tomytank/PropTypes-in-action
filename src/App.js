@@ -9,8 +9,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      pokemon: data
-    };
+      pokemon: data //can set this to undefined and
+    }; //default Prop in Pokemon will be loaded!! Very Cool!!
   }
 
   render() {
