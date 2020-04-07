@@ -10,8 +10,10 @@ function Pokemon(props) {
           <img src={pokemon.img} alt={pokemon.name} />
           <div>
             <h3>{pokemon.name}</h3>
-            <h3>{pokemon.nextEvolution}</h3>
           </div>
+          {pokemon.next_evolution.map(evo => {
+            return <p>{evo.name}</p>;
+          })}
         </div>
       ))}
     </>
@@ -26,9 +28,9 @@ Pokemon.propTypes = {
       img: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       num: PropTypes.string,
-      type:
-        PropTypes.oneOf[
-          ("Grass",
+      type: PropTypes.arrayOf(
+        PropTypes.oneOf([
+          "Grass",
           "Poison",
           "Fire",
           "Flying",
@@ -42,13 +44,23 @@ Pokemon.propTypes = {
           "Rock",
           "Ice",
           "Ghost",
-          "Dragon")
-        ]
+          "Dragon"
+        ])
+      ),
+      next_evolution: PropTypes.arrayOf(
+        PropTypes.shape({
+          num: PropTypes.string,
+          name: PropTypes.string
+        })
+      )
     })
   )
 };
 
 Pokemon.defaultProps = {
+  //Default Prop if data fields are not laoded for whatever reason
+  // the following could be a blank display form or a set of dummy data
+  //Default response
   pokemon: [
     {
       id: 16,

@@ -11,6 +11,7 @@ class App extends React.Component {
     this.state = {
       pokemon: data //can set this to undefined and
     }; //default Prop in Pokemon will be loaded!! Very Cool!!
+    //or this could be a failure to load up an API or a delayed API response
   }
 
   render() {
