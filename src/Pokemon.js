@@ -19,6 +19,31 @@ function Pokemon(props) {
 
 // PropTypes to add here
 Pokemon.propTypes = {
-  pokemon: PropTypes.number
+  pokemon: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      img: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      num: PropTypes.string,
+      type:
+        PropTypes.oneOf[
+          ("Grass",
+          "Poison",
+          "Fire",
+          "Flying",
+          "Water",
+          "Bug",
+          "Normal",
+          "Electric",
+          "Psychic",
+          "Ground",
+          "Fighting",
+          "Rock",
+          "Ice",
+          "Ghost",
+          "Dragon")
+        ]
+    })
+  )
 };
 export default Pokemon;
