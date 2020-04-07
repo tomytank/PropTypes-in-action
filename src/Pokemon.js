@@ -9,16 +9,26 @@ function Pokemon(props) {
         <div key={pokemon.id} className="pokemon">
           <img src={pokemon.img} alt={pokemon.name} />
           <div>
+            {/*using 'magical' and operator*/}
             <h3>{pokemon.name}</h3>
+            <p>Pokemon Evolutions: </p>
+            {pokemon.next_evolution &&
+              pokemon.next_evolution.map(evo => {
+                return <p>{evo.name}</p>;
+              })}
           </div>
-          {pokemon.next_evolution.map(evo => {
-            return <p>{evo.name}</p>;
-          })}
         </div>
       ))}
     </>
   );
 }
+//Using Tenary operator for above:
+/* <p>Pokemon Evolutions: </p>
+{pokemon.next_evolution
+  ? pokemon.next_evolution.map(evo => {
+      return <p>{evo.name}</p>;
+    })
+  : null} */
 
 // PropTypes to add here
 Pokemon.propTypes = {
