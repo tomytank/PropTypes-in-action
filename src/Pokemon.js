@@ -17,5 +17,8 @@ function Pokemon(props) {
   );
 }
 
-// PropTypes to add and control
+// PropTypes to add here
+Pokemon.propTypes = {
+  pokemon: PropTypes.number
+};
 export default Pokemon;
